@@ -1,0 +1,62 @@
+<mat-card>
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+      <h2>{{ editMode ? 'Edit Student Details' : 'Add Student Details' }}</h2>
+  
+      <!-- Name Input -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter student's name">
+      </mat-form-field>
+  
+      <!-- Age Input -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" formControlName="age" placeholder="Enter student's age">
+      </mat-form-field>
+  
+      <!-- Gender Radio Buttons -->
+      <div class="gender-group">
+        <label>Gender:</label>
+        <mat-radio-group formControlName="gender">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+          <mat-radio-button value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+      </div>
+  
+      <!-- Course Input with Autocomplete -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Course</mat-label>
+        <input type="text" matInput formControlName="course" [matAutocomplete]="auto" placeholder="Select course">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let course of courses" [value]="course">
+            {{course}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+  
+      <!-- Skills Checkboxes -->
+      <div class="skills-group">
+        <label>Skills:</label>
+        <div formGroupName="skills" class="checkbox-group">
+          <mat-checkbox *ngFor="let skill of availableSkills" formControlName="{{skill}}">
+            {{skill}}
+          </mat-checkbox>
+        </div>
+      </div>
+  
+      <!-- Address Textarea -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="address" placeholder="Enter address details"></textarea>
+      </mat-form-field>
+  
+      <!-- Submit Button -->
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit">
+          {{ editMode ? 'Update Student' : 'Submit' }}
+        </button>
+      </div>
+    </form>
+  </mat-card>
+  
