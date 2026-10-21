@@ -1,27 +1,45 @@
-# StudentManagement
+# Student Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+A CRUD application built with Angular 18 and Angular Material for managing student records. Demonstrates Angular reactive forms, component communication, service layer patterns, and Material Design UI.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Add, view, and manage student records
+- Reactive form with validation (student-form component)
+- Data table with sorting and display (student-table component)
+- Service layer abstracting data operations
+- Angular Material UI components (table, form fields, buttons)
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Angular](https://img.shields.io/badge/Angular_18-DD0031?style=flat&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Angular Material](https://img.shields.io/badge/Angular_Material-757575?style=flat&logo=material-design&logoColor=white)
 
-## Build
+## Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/
+├── app/
+│   └── app.component.ts        # Root component
+├── components/
+│   ├── student-form/           # Add/edit student form
+│   └── student-table/          # Student records table
+└── services/
+    └── student.service.ts      # Data service layer
+```
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/kartik70/student-management.git
+cd student-management
+npm install
+ng serve
+```
 
-## Running end-to-end tests
+Open [http://localhost:4200](http://localhost:4200)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Author
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[Kartik Kakad](https://github.com/kartik70)
